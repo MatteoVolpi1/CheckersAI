@@ -1,5 +1,5 @@
 import pygame
-from .constants import BLACK, ROWS, RED, SQUARE_SIZE, COLS, WHITE
+from .constants import BLACK, ROWS, RED, SQUARE_SIZE, COLS, WHITE, BEIGE
 from .piece import Piece
 
 class Board:
@@ -13,7 +13,7 @@ class Board:
         win.fill(BLACK)
         for row in range(ROWS):
             for col in range(row % 2, COLS, 2):
-                pygame.draw.rect(win, RED, (row*SQUARE_SIZE, col *SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE))
+                pygame.draw.rect(win, BEIGE, (row*SQUARE_SIZE, col *SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE))
 
     def get_all_pieces(self, color):
         pieces = []
@@ -428,8 +428,8 @@ class Board:
         """
 
         # Define some weights for the different features we will evaluate
-        pawn_weight = 1.5  # Weight for the number of pawns
-        king_weight = 2  # Weight for the number of kings
+        pawn_weight = 2.5  # Weight for the number of pawns 1.5
+        king_weight = 4  # Weight for the number of kings 2
         distance_weight = 0.2  # Weight for the aggregated distance to promotion line
         save_pawn_weight = 0.2  # Weight for saving pawns
         save_king_weight = 0.4  # Weight for saving kings

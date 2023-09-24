@@ -1,4 +1,5 @@
 import pygame
+import datetime
 from checkers.constants import WIDTH, HEIGHT, SQUARE_SIZE, RED, WHITE
 from checkers.game import Game
 from minimax.algorithm import minimax_alpha_beta
@@ -41,8 +42,10 @@ def main():
         if game.turn == WHITE and AI_ENABLED:
             #value, new_board = minimax(game.get_board(), AI_DEPTH, WHITE, game, float('-inf'), float('inf'))
             #value, new_board = simple_minimax(game.get_board(), AI_DEPTH, WHITE, game)
+            start = datetime.datetime.now()
             value, new_board = minimax_alpha_beta(game.get_board(), AI_DEPTH, float('-inf'), float('inf'), WHITE, game)
-            print("value: ", value)
+            end = datetime.datetime.now()
+            print("[",(end - start).total_seconds()," s] value: ", value)
             game.ai_move(new_board)
 
         if game.board.is_winner(WHITE):
