@@ -453,7 +453,7 @@ class Board:
         dog_weight = -0.5 # Weight for a dog situation
         king_in_corner_weight = -0.5 # Weight for a king in corner situation
         pawn_in_corner_weight = -0.3 # Weight for a pawn in corner situation
-        winning_weight = 100 # Weight for a winning situation
+        winning_weight = 10000 # Weight for a winning situation
 
         num_pawns = 0
         num_kings = 0
