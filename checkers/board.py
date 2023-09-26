@@ -428,8 +428,8 @@ class Board:
         """
 
         # Define some weights for the different features we will evaluate
-        pawn_weight = 2.5  # Weight for the number of pawns 1.5
-        king_weight = 4  # Weight for the number of kings 2
+        pawn_weight = 4  # Weight for the number of pawns 1.5 2.5 4 
+        king_weight = 7.25  # Weight for the number of kings 2 4 7.25
         distance_weight = 0.2  # Weight for the aggregated distance to promotion line
         save_pawn_weight = 0.2  # Weight for saving pawns
         save_king_weight = 0.4  # Weight for saving kings
